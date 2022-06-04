@@ -2,9 +2,10 @@
  
 import numpy as np 
 import random as rand 
-
 import card_hand_module as ch
 
+
+# Go to line 120 to edit relavant parameters 
 
 # find the odds of winning 
 def find_odds( pocket, table, n ): 
@@ -115,14 +116,14 @@ def find_odds2( pocket, table, n, nplay ):
 
 
 
-
+# # edit parameters here 
 n = 1000  # simulations to do 
 
 # get input...
 # recall h,s,d,c for suit, 2-9, T,J,Q,K,A for rank  
 nplay =       3;  # other players  
-pocket_str ='   ';  
-table_str  ='   '; 
+pocket_str ='h9, hT   ';  
+table_str  =' hJ, hQ, hK, hA, d8  '; 
 
 pocket_str = pocket_str.upper() 
 pocket_str = pocket_str.replace(' ','') 
@@ -147,7 +148,7 @@ print( "Table:  ", table )
 # p = find_odds( pocket, table, n)
 p = find_odds2( pocket, table, n, nplay)
 print( 'Prob of win {:6.4f} '.format( p  )  ) 
-print( 'win to loss ratio of {:6.4f} needed.'.format( (1-p)/p ) , ' (bet * ratio >= pot?)' )  
+# print( 'win to loss ratio of {:6.4f} needed.'.format( (1-p)/p ) , ' (bet * ratio >= pot?)' )  
 
 
 
